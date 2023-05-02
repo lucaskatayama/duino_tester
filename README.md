@@ -1,0 +1,17 @@
+# Duino Tester
+
+A basic component tester with Arduino Nano
+
+## Hardware
+
+| Name                             | Qty  |
+| :------------------------------- | :--- |
+| Arduino Nano                     | 1    |
+| SSD1306 OLED Screen 128x64 0.96" | 1    |
+| 470K Resistor                    | 3    |
+| 680R Resistor                    | 3    |
+| 10K Resistor                     | 1    |
+
+## References
+
+- https://maker.pro/arduino/projects/diy-super-simple-electronic-component-tester
