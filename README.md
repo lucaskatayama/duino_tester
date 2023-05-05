@@ -12,6 +12,13 @@ A basic component tester with Arduino Nano
 | 680R Resistor                    | 3    |
 | 10K Resistor                     | 1    |
 
+## Software
+
+- Adafruit_SSD1306
+- Adafruit_GFX
+- Wire
+- SPI
+
 ## References
 
 - https://maker.pro/arduino/projects/diy-super-simple-electronic-component-tester

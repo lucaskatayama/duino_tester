@@ -1,7 +1,7 @@
 {
     "configuration": "cpu=atmega328",
     "board": "arduino:avr:nano",
-    "port": "/dev/tty.usbserial-10",
+    "port": "/dev/tty.usbserial-110",
     "sketch": "duino_tester/duino_tester.ino",
     "output": "./output"
 }

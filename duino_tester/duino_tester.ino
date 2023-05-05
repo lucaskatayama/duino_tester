@@ -30,9 +30,9 @@
 
 // #define LCD1602
 // #define LCD_I2C
-// #define NOK5110
+#define NOK5110
 //  #define OLED096
-#define OLED_I2C
+// #define OLED_I2C
 
 #ifdef LCD_I2C
 #ifndef LCD1602
@@ -1268,7 +1268,7 @@ Adafruit_PCD8544 lcd = Adafruit_PCD8544(3, 4, 5, 6, 7); // CLK,DIN,DC,CE,RST
 #define SCREEN_WIDTH 128 // OLED display width, in pixels
 #define SCREEN_HEIGHT 64 // OLED display height, in pixels
 #define OLED_RESET 7
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 // Adafruit_SSD1306 display(OLED_RESET);
 #else
 #define OLED_CLK 7   // D0
@@ -1283,7 +1283,7 @@ Adafruit_SSD1306 display(OLED_MOSI, OLED_CLK, OLED_DC, OLED_RESET, OLED_CS);
 // begin of transistortester program
 void setup()
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   pinMode(TestKeyPin, INPUT);
 
@@ -1311,13 +1311,27 @@ void setup()
 #ifdef NOK5110
   lcd.begin();
   lcd.cp437(true);
-  lcd.setContrast(40);
+  lcd.setRotation(2);
+  lcd.setContrast(55);
   lcd.clearDisplay();
 #endif
 
 #ifdef OLED096
 #ifdef OLED_I2C
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+
+  delay(3000);
+  Serial.println("display begin");
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C))
+  {
+    Serial.println("failed to start display");
+    while (1)
+    {
+
+      delay(10000);
+    }
+  }
+  Serial.println("Started screen");
+  display.setRotation(2);
 #else
   display.begin(SSD1306_SWITCHCAPVCC);
 #endif
