@@ -2,6 +2,8 @@
 
 A basic component tester with Arduino Nano
 
+![](./docs/assets/image.webp)
+
 ## Hardware
 
 | Name                             | Qty  |

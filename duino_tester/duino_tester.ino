@@ -1310,6 +1310,7 @@ void setup()
 
 #ifdef NOK5110
   lcd.begin();
+  lcd.clearDisplay();
   lcd.cp437(true);
   lcd.setRotation(2);
   lcd.setContrast(55);
